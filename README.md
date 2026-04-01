@@ -25,6 +25,10 @@ ORDER BY hire_date ASC
 LIMIT 10;
 ```
 
+**Скриншот выполнения:** 
+
+<img width="1027" height="567" alt="image" src="https://github.com/user-attachments/assets/1f26be70-3809-4aa9-b109-e8cb19130313" />
+
 ```sql
 -- Мужчины-продавцы (первые 10 нанятых)
 SELECT username, hire_date
@@ -33,6 +37,10 @@ WHERE gender = 'Male'
 ORDER BY hire_date ASC
 LIMIT 10;
 ```
+
+**Скриншот выполнения:** 
+
+<img width="1025" height="568" alt="image" src="https://github.com/user-attachments/assets/69001930-cf14-4e9c-9472-9f41079f5f5d" />
 
 ### 1.2. Работа с клиентами (Customers)
 
@@ -50,19 +58,36 @@ SELECT email
 FROM customers
 WHERE state = 'FL'
 ORDER BY email ASC;
+```
 
+**Скриншот выполнения:**
+
+![Uploading image.png…]() 
+
+```sql
 -- Клиенты из New York City, NY
 SELECT first_name, last_name, email
 FROM customers
 WHERE city = 'New York City' AND state = 'NY'
 ORDER BY last_name ASC, first_name ASC;
+```
 
+**Скриншот выполнения:**
+
+![Uploading image.png…]() 
+
+```
 -- Все клиенты с номерами телефонов, сортировка по дате добавления
 SELECT first_name, last_name, phone, date_added
 FROM customers
 WHERE phone IS NOT NULL
 ORDER BY date_added ASC;
 ```
+
+**Скриншот выполнения:**
+
+
+
 ---
 
 ### 1.3. Маркетинговые операции (CRUD)
@@ -82,11 +107,24 @@ CREATE TABLE customers_rus AS
 SELECT *
 FROM customers
 WHERE city = 'New York City' AND state = 'NY';
+```
 
+**Скриншот выполнения:**
+
+<img width="944" height="873" alt="image" src="https://github.com/user-attachments/assets/846915e4-442d-4922-8fa1-6b4f9b0d56d4" />
+
+```sql
 -- 2. Удаление клиента с индексом 10014
 DELETE FROM customers_rus
 WHERE customer_id = 10014;
+```
 
+**Скриншот выполнения:**
+
+<img width="540" height="93" alt="image" src="https://github.com/user-attachments/assets/b3ef9b94-8726-4506-8eb2-38daf04e1128" />
+<img width="856" height="231" alt="image" src="https://github.com/user-attachments/assets/7e2d2d03-9361-4f84-b23f-fe0ba4a0e234" />
+
+```sql
 -- 3. Добавление текстового столбца event
 ALTER TABLE customers_rus
 ADD COLUMN event TEXT;
@@ -95,6 +133,9 @@ ADD COLUMN event TEXT;
 UPDATE customers_rus
 SET event = 'thank-you party';
 ```
+
+**Скриншот выполнения:**
+
 
 ---
 
