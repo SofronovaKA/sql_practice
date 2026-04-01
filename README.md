@@ -25,7 +25,7 @@ ORDER BY hire_date ASC
 LIMIT 10;
 ```
 
-```
+```sql
 -- Мужчины-продавцы (первые 10 нанятых)
 SELECT username, hire_date
 FROM salespeople
@@ -44,23 +44,19 @@ LIMIT 10;
 
 **Код запросов:**
 
-```
+```sql
 -- Email клиентов из штата Флорида (FL)
 SELECT email
 FROM customers
 WHERE state = 'FL'
 ORDER BY email ASC;
-```
 
-```
 -- Клиенты из New York City, NY
 SELECT first_name, last_name, email
 FROM customers
 WHERE city = 'New York City' AND state = 'NY'
 ORDER BY last_name ASC, first_name ASC;
-```
 
-```
 -- Все клиенты с номерами телефонов, сортировка по дате добавления
 SELECT first_name, last_name, phone, date_added
 FROM customers
@@ -80,27 +76,21 @@ ORDER BY date_added ASC;
 
 **Код запросов:**
 
-```
+```sql
 -- 1. Создание таблицы customers_rus
 CREATE TABLE customers_rus AS
 SELECT *
 FROM customers
 WHERE city = 'New York City' AND state = 'NY';
-```
 
-```
 -- 2. Удаление клиента с индексом 10014
 DELETE FROM customers_rus
 WHERE customer_id = 10014;
-```
 
-```
 -- 3. Добавление текстового столбца event
 ALTER TABLE customers_rus
 ADD COLUMN event TEXT;
-```
 
-```
 -- 4. Обновление столбца event
 UPDATE customers_rus
 SET event = 'thank-you party';
@@ -118,7 +108,7 @@ SET event = 'thank-you party';
 
 **Код запроса:**
 
-```
+```sql
 SELECT *
 FROM customers
 WHERE city = 'Chicago'
@@ -133,14 +123,12 @@ ORDER BY index ASC;
 
 **Код запроса:**
 
-```
+```sql
 -- Поиск таблицы с колонкой dealership_id
 SELECT table_name, column_name
 FROM information_schema.columns
 WHERE column_name = 'dealership_id';
-```
 
-```
 -- Запрос на основе найденной таблицы (пример для sales_data)
 SELECT *
 FROM sales_data
@@ -155,16 +143,15 @@ WHERE dealership_id IS NULL;
 
 **Код запросов:**
 
-```
+```sql
 -- Создание таблицы
 CREATE TABLE emails_click (
     id SERIAL PRIMARY KEY,
     email VARCHAR(100),
     click_date DATE,
     score INTEGER
-); ```
+);
 
-```
 -- Добавление тестовых данных
 INSERT INTO emails_click (email, click_date, score) VALUES
 ('user1@example.com', '2010-05-10', NULL),
@@ -172,27 +159,20 @@ INSERT INTO emails_click (email, click_date, score) VALUES
 ('user3@example.com', '2015-03-20', NULL),
 ('user4@example.com', '2016-07-25', NULL),
 ('user5@example.com', '2018-01-30', NULL);
-```
 
-```
 -- Добавить score = 10
 UPDATE emails_click
 SET score = 10;
-```
 
-```
 -- Удалить старые записи (< 2012)
 DELETE FROM emails_click
 WHERE click_date < '2012-01-01';
-```
 
-```
 -- Проверка результата
 SELECT * FROM emails_click;
 ```
 
 ---
-
 
 ### Вывод
 
