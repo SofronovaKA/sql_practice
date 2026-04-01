@@ -184,7 +184,7 @@ WHERE dealership_id IS NULL;
 
 **Скриншот выполнения:**
 
-![Uploading image.png…]() 
+<img width="1280" height="796" alt="image" src="https://github.com/user-attachments/assets/bcab99c4-50c7-4852-87e3-f68471de9f79" />
 
 ## Задание 3. Таблица emails_click
 
@@ -222,6 +222,10 @@ WHERE click_date < '2012-01-01';
 -- Проверка результата
 SELECT * FROM emails_click;
 ```
+
+**Скриншот выполнения:**
+
+<img width="891" height="671" alt="image" src="https://github.com/user-attachments/assets/4e3d1b94-cebc-449f-8b42-61bb5145677a" />
 
 ---
 
