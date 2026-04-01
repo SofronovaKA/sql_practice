@@ -62,7 +62,7 @@ ORDER BY email ASC;
 
 **Скриншот выполнения:**
 
-![Uploading image.png…]() 
+<img width="1280" height="854" alt="image" src="https://github.com/user-attachments/assets/aac8fbda-d4ce-4f17-bb8d-93fb11910f72" />
 
 ```sql
 -- Клиенты из New York City, NY
@@ -74,7 +74,7 @@ ORDER BY last_name ASC, first_name ASC;
 
 **Скриншот выполнения:**
 
-![Uploading image.png…]() 
+<img width="1280" height="733" alt="image" src="https://github.com/user-attachments/assets/6bb5f477-449d-49c5-b5d6-31c30fbffe62" />
 
 ```
 -- Все клиенты с номерами телефонов, сортировка по дате добавления
@@ -86,7 +86,7 @@ ORDER BY date_added ASC;
 
 **Скриншот выполнения:**
 
-
+<img width="1280" height="832" alt="image" src="https://github.com/user-attachments/assets/b1c70077-284b-495a-9c15-1d6158748fca" />
 
 ---
 
@@ -136,6 +136,8 @@ SET event = 'thank-you party';
 
 **Скриншот выполнения:**
 
+<img width="568" height="167" alt="image" src="https://github.com/user-attachments/assets/f4be501a-7fbe-493e-aba5-8cdfccb3675d" />
+<img width="1280" height="121" alt="image" src="https://github.com/user-attachments/assets/4f79f45a-2020-4068-b4c9-a3944bfd4887" />
 
 ---
 
@@ -156,6 +158,10 @@ WHERE city = 'Chicago'
 ORDER BY index ASC;
 ```
 
+**Скриншот выполнения:**
+
+<img width="1280" height="609" alt="image" src="https://github.com/user-attachments/assets/b8cf2279-da1c-4f7d-9e51-c50af65b25dd" />
+
 ## Задание 2. Продажи с NULL в dealership_id
 
 **Текст задания:**
@@ -175,6 +181,10 @@ SELECT *
 FROM sales_data
 WHERE dealership_id IS NULL;
 ```
+
+**Скриншот выполнения:**
+
+![Uploading image.png…]() 
 
 ## Задание 3. Таблица emails_click
 
