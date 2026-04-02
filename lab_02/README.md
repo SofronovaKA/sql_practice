@@ -54,7 +54,7 @@ WHERE
 ```
 
 **Скриншот результата**
-
+<img width="949" height="855" alt="image" src="https://github.com/user-attachments/assets/5049c74b-af1e-4a43-b383-328ab43ad3ca" />
 
 ### Пояснение логики
 
@@ -99,7 +99,7 @@ ORDER BY
 ```
 
 **Скриншот результата**
-
+<img width="816" height="841" alt="image" src="https://github.com/user-attachments/assets/17f32ea3-204e-470f-9a85-87806a76e3f1" /> 
 
 ### Пояснение логики
 
@@ -151,7 +151,13 @@ LEFT JOIN
 ```
 
 **Скриншот результата**
+<img width="1280" height="556" alt="image" src="https://github.com/user-attachments/assets/916178eb-4fbf-4489-a38c-2e05b4e156ef" /> 
 
+**(продолжение)**
+<img width="1280" height="673" alt="image" src="https://github.com/user-attachments/assets/2a2801f9-2d77-47f5-9d8c-286087f1f4b3" /> 
+
+**(продолжение)**
+<img width="781" height="659" alt="image" src="https://github.com/user-attachments/assets/a5dbd1be-ee49-4911-b94d-e1633c79e65d" /> 
 
 ### Пояснение логики
 
@@ -189,7 +195,7 @@ ORDER BY
 ```
 
 **Скриншот результата**
-
+<img width="1031" height="858" alt="image" src="https://github.com/user-attachments/assets/ed55b7a0-11a4-4755-b23c-2e6bf0f7f0e7" /> 
 
 ### Пояснение логики
 
@@ -230,7 +236,7 @@ WHERE
 ```
 
 **Скриншот результата**
-
+<img width="1280" height="778" alt="image" src="https://github.com/user-attachments/assets/d3199035-ebd3-4c40-b218-a44277cdc2fe" />
 
 ### Пояснение логики
 
@@ -275,7 +281,7 @@ FROM
 ```
 
 **Скриншот результата**
-
+<img width="1280" height="630" alt="image" src="https://github.com/user-attachments/assets/dd4d8c91-cf7c-4696-925f-b17bb78c92c3" />
 
 ### Пояснение логики
 
