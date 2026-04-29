@@ -25,9 +25,11 @@ ORDER BY hire_date ASC
 LIMIT 10;
 ```
 
-**Скриншот выполнения:** 
+**Результат выполнения:** 
 
 <img width="1027" height="567" alt="image" src="https://github.com/user-attachments/assets/1f26be70-3809-4aa9-b109-e8cb19130313" />
+
+**Код запроса:**
 
 ```sql
 -- Мужчины-продавцы (первые 10 нанятых)
@@ -38,7 +40,7 @@ ORDER BY hire_date ASC
 LIMIT 10;
 ```
 
-**Скриншот выполнения:** 
+**Результат выполнения:** 
 
 <img width="1025" height="568" alt="image" src="https://github.com/user-attachments/assets/69001930-cf14-4e9c-9472-9f41079f5f5d" />
 
@@ -50,7 +52,7 @@ LIMIT 10;
 2. Получите имена, фамилии и email клиентов из города Нью-Йорк (New York City), штат Нью-Йорк (NY). Отсортируйте результат по фамилии, затем по имени.
 3. Получите всех клиентов с их номерами телефонов, отсортированных по дате добавления в базу (date_added).
 
-**Код запросов:**
+**Код запроса:**
 
 ```sql
 -- Email клиентов из штата Флорида (FL)
@@ -60,9 +62,11 @@ WHERE state = 'FL'
 ORDER BY email ASC;
 ```
 
-**Скриншот выполнения:**
+**Результат выполнения:**
 
 <img width="1280" height="854" alt="image" src="https://github.com/user-attachments/assets/aac8fbda-d4ce-4f17-bb8d-93fb11910f72" />
+
+**Код запроса:**
 
 ```sql
 -- Клиенты из New York City, NY
@@ -72,11 +76,13 @@ WHERE city = 'New York City' AND state = 'NY'
 ORDER BY last_name ASC, first_name ASC;
 ```
 
-**Скриншот выполнения:**
+**Результат выполнения:**
 
 <img width="1280" height="733" alt="image" src="https://github.com/user-attachments/assets/6bb5f477-449d-49c5-b5d6-31c30fbffe62" />
 
-```
+**Код запроса:**
+
+```sql
 -- Все клиенты с номерами телефонов, сортировка по дате добавления
 SELECT first_name, last_name, phone, date_added
 FROM customers
@@ -84,7 +90,7 @@ WHERE phone IS NOT NULL
 ORDER BY date_added ASC;
 ```
 
-**Скриншот выполнения:**
+**Результат выполнения:**
 
 <img width="1280" height="832" alt="image" src="https://github.com/user-attachments/assets/b1c70077-284b-495a-9c15-1d6158748fca" />
 
@@ -99,7 +105,7 @@ ORDER BY date_added ASC;
 3. Изменение. Добавьте текстовый столбец event.
 4. Обновление. Заполните столбец event значением 'thank-you party'.
 
-**Код запросов:**
+**Код запроса:**
 
 ```sql
 -- 1. Создание таблицы customers_rus
@@ -113,6 +119,8 @@ WHERE city = 'New York City' AND state = 'NY';
 
 ![Скриншот](./images_lab_01/operation_C_general.jpg)
 
+**Код запроса:**
+
 ```sql
 -- 2. Удаление клиента с индексом 10014
 DELETE FROM customers_rus
@@ -122,7 +130,9 @@ WHERE postal_code = 10014;
 **Результат выполнения:**
 
 ![Скриншот](./images_lab_01/operation_R_general.jpg)
- 
+
+**Код запроса:**
+
 ```sql
 -- 3. Добавление текстового столбца event
 ALTER TABLE customers_rus
@@ -132,6 +142,8 @@ ADD COLUMN event TEXT;
 **Результат выполнения:**
 
 ![Скриншот](./images_lab_01/operation_U_general.jpg)  
+
+**Код запроса:**
 
 ```sql
 -- 4. Обновление столбца event
@@ -143,8 +155,13 @@ SET event = 'thank-you party';
 
 ![Скриншот](./images_lab_01/operation_D_general.jpg)
 
--- Проверка
+**Код запроса**
+
 ```sql
+-- Проверка
+SELECT customer_id, first_name, last_name, city, postal_code, event 
+FROM customers_nyc 
+LIMIT 15;
 ```
 
 **Результат выполнения:**
@@ -204,7 +221,7 @@ WHERE dealership_id IS NULL;
 
 Таблица emails_click (письма с кликами). Добавить score=10. Удалить старые (<2012).
 
-**Код запросов:**
+**Код запроса:**
 
 ```sql
 -- Задание 3. Операции CRUD.
@@ -218,6 +235,8 @@ FROM emails;
 
 ![Скриншот](./images_lab_01/operation_C_individual.jpg)
 
+**Код запроса:**
+
 ```sql
 -- 2. ALTER — добавление столбца score
 ALTER TABLE emails_click
@@ -227,6 +246,8 @@ ADD COLUMN score INTEGER;
 **Результат выполнения:**
 
 ![Скриншот](./images_lab_01/operation_R_individual.jpg)
+
+**Код запроса:**
 
 ```sql
 -- 3. UPDATE — заполнение score значением 10
@@ -238,6 +259,8 @@ SET score = 10;
 
 ![Скриншот](./images_lab_01/operation_U_individual.jpg)
 
+**Код запроса:**
+
 ```sql
 -- 4. DELETE — удаление записей, где clicked_date раньше 2012 года
 DELETE FROM emails_click
@@ -247,6 +270,8 @@ WHERE EXTRACT(YEAR FROM clicked_date) < 2012;
 **Результат выполнения:**
 
 ![Скриншот](./images_lab_01/operation_D_individual.jpg)
+
+**Код запроса:**
 
 ```sql
 -- Проверка
