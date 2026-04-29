@@ -16,7 +16,7 @@
 | **ЛР3** (GROUP BY, HAVING, агрегация) | [README.md](./lab_03/README.md) | [lab_03.sql](./lab_03/lab_03.sql) |
 | **ЛР4** (Оконные функции: ROW_NUMBER, LAG, MAX в окне) | [README.md](./lab_04/README.md) | [lab_04.sql](./lab_04/lab_04.sql) |
 | **ЛР5** (Оптимизация запросов: индексы, EXPLAIN ANALYZE) | [README.md](./lab_05/README.md) | [lab_05.sql](./lab_05/lab_05.sql) |
----
+| **ПР1** (Геопространственный анализ, JSON, текстовая аналитика) | [README.md](./pr_01/README.md) | [practical_work_01.sql](./pr_01/practical_work_01.sql) |
 
 ## 🔗 Ссылка на репозиторий
 
