@@ -121,8 +121,8 @@ WHERE postal_code = 10014;
 
 **Скриншот выполнения:**
 
-![Uploading 2.jpg…]() 
-
+ 
+ 
 ```sql
 -- 3. Добавление текстового столбца event
 ALTER TABLE customers_rus
@@ -195,37 +195,9 @@ WHERE dealership_id IS NULL;
 **Код запросов:**
 
 ```sql
--- Создание таблицы
-CREATE TABLE emails_click (
-    id SERIAL PRIMARY KEY,
-    email VARCHAR(100),
-    click_date DATE,
-    score INTEGER
-);
-
--- Добавление тестовых данных
-INSERT INTO emails_click (email, click_date, score) VALUES
-('user1@example.com', '2010-05-10', NULL),
-('user2@example.com', '2011-08-15', NULL),
-('user3@example.com', '2015-03-20', NULL),
-('user4@example.com', '2016-07-25', NULL),
-('user5@example.com', '2018-01-30', NULL);
-
--- Добавить score = 10
-UPDATE emails_click
-SET score = 10;
-
--- Удалить старые записи (< 2012)
-DELETE FROM emails_click
-WHERE click_date < '2012-01-01';
-
--- Проверка результата
-SELECT * FROM emails_click;
-```
 
 **Скриншот выполнения:**
 
-<img width="891" height="671" alt="image" src="https://github.com/user-attachments/assets/4e3d1b94-cebc-449f-8b42-61bb5145677a" />
 
 ---
 
