@@ -121,7 +121,7 @@ WHERE postal_code = 10014;
 
 **Скриншот выполнения:**
 
- 
+
  
 ```sql
 -- 3. Добавление текстового столбца event
@@ -136,7 +136,6 @@ SET event = 'thank-you party';
 ```
 
 **Скриншот выполнения:**
-
 
 
 ---
@@ -195,9 +194,30 @@ WHERE dealership_id IS NULL;
 **Код запросов:**
 
 ```sql
+-- Задание 3. Операции CRUD.
+-- 1. CREATE — создание таблицы emails_click на основе данных из emails
+CREATE TABLE emails_click AS
+SELECT *
+FROM emails;
+
+-- 2. ALTER — добавление столбца score
+ALTER TABLE emails_click
+ADD COLUMN score INTEGER;
+
+-- 3. UPDATE — заполнение score значением 10
+UPDATE emails_click
+SET score = 10;
+
+-- 4. DELETE — удаление записей, где clicked_date раньше 2012 года
+DELETE FROM emails_click
+WHERE EXTRACT(YEAR FROM clicked_date) < 2012;
+
+-- Проверка
+SELECT * FROM emails_click LIMIT 15;
 
 **Скриншот выполнения:**
 
+![Uploading image.png…]() 
 
 ---
 
