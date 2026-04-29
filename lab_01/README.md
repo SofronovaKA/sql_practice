@@ -111,23 +111,24 @@ WHERE city = 'New York City' AND state = 'NY';
 
 **Скриншот выполнения:**
 
-<img width="944" height="873" alt="image" src="https://github.com/user-attachments/assets/846915e4-442d-4922-8fa1-6b4f9b0d56d4" />
+<img width="1280" height="525" alt="image" src="https://github.com/user-attachments/assets/cc3165de-f55d-48be-8e2a-c1b9475ffdd8" /> 
 
 ```sql
 -- 2. Удаление клиента с индексом 10014
 DELETE FROM customers_rus
-WHERE customer_id = 10014;
+WHERE postal_code = 10014;
 ```
 
 **Скриншот выполнения:**
 
-<img width="540" height="93" alt="image" src="https://github.com/user-attachments/assets/b3ef9b94-8726-4506-8eb2-38daf04e1128" />
-<img width="856" height="231" alt="image" src="https://github.com/user-attachments/assets/7e2d2d03-9361-4f84-b23f-fe0ba4a0e234" />
+![Uploading 2.jpg…]() 
 
 ```sql
 -- 3. Добавление текстового столбца event
 ALTER TABLE customers_rus
 ADD COLUMN event TEXT;
+
+**Скриншот выполнения:**  
 
 -- 4. Обновление столбца event
 UPDATE customers_rus
@@ -136,8 +137,7 @@ SET event = 'thank-you party';
 
 **Скриншот выполнения:**
 
-<img width="568" height="167" alt="image" src="https://github.com/user-attachments/assets/f4be501a-7fbe-493e-aba5-8cdfccb3675d" />
-<img width="1280" height="121" alt="image" src="https://github.com/user-attachments/assets/4f79f45a-2020-4068-b4c9-a3944bfd4887" />
+
 
 ---
 
