@@ -109,9 +109,9 @@ FROM customers
 WHERE city = 'New York City' AND state = 'NY';
 ```
 
-**Скриншот выполнения:**
+**Результат выполнения:**
 
-<img width="1280" height="525" alt="image" src="https://github.com/user-attachments/assets/cc3165de-f55d-48be-8e2a-c1b9475ffdd8" /> 
+![Скриншот](./images_lab_01/operation_C_general.jpg)
 
 ```sql
 -- 2. Удаление клиента с индексом 10014
@@ -119,24 +119,37 @@ DELETE FROM customers_rus
 WHERE postal_code = 10014;
 ```
 
-**Скриншот выполнения:**
+**Результат выполнения:**
 
-
+![Скриншот](./images_lab_01/operation_R_general.jpg)
  
 ```sql
 -- 3. Добавление текстового столбца event
 ALTER TABLE customers_rus
 ADD COLUMN event TEXT;
+```
 
-**Скриншот выполнения:**  
+**Результат выполнения:**
 
+![Скриншот](./images_lab_01/operation_U_general.jpg)  
+
+```sql
 -- 4. Обновление столбца event
 UPDATE customers_rus
 SET event = 'thank-you party';
 ```
 
-**Скриншот выполнения:**
+**Результат выполнения:**
 
+![Скриншот](./images_lab_01/operation_D_general.jpg)
+
+-- Проверка
+```sql
+```
+
+**Результат выполнения:**
+
+![Скриншот](./images_lab_01/check_3_general.jpg)
 
 ---
 
@@ -157,7 +170,7 @@ WHERE city = 'Chicago'
 ORDER BY index ASC;
 ```
 
-**Скриншот выполнения:**
+**Результат выполнения:**
 
 <img width="1280" height="609" alt="image" src="https://github.com/user-attachments/assets/b8cf2279-da1c-4f7d-9e51-c50af65b25dd" />
 
@@ -181,7 +194,7 @@ FROM sales_data
 WHERE dealership_id IS NULL;
 ```
 
-**Скриншот выполнения:**
+**Результат выполнения:**
 
 <img width="1280" height="796" alt="image" src="https://github.com/user-attachments/assets/bcab99c4-50c7-4852-87e3-f68471de9f79" />
 
@@ -199,25 +212,50 @@ WHERE dealership_id IS NULL;
 CREATE TABLE emails_click AS
 SELECT *
 FROM emails;
+```
 
+**Результат выполнения:**
+
+![Скриншот](./images_lab_01/operation_C_individual.jpg)
+
+```sql
 -- 2. ALTER — добавление столбца score
 ALTER TABLE emails_click
 ADD COLUMN score INTEGER;
+```
 
+**Результат выполнения:**
+
+![Скриншот](./images_lab_01/operation_R_individual.jpg)
+
+```sql
 -- 3. UPDATE — заполнение score значением 10
 UPDATE emails_click
 SET score = 10;
+```
 
+**Результат выполнения:**
+
+![Скриншот](./images_lab_01/operation_U_individual.jpg)
+
+```sql
 -- 4. DELETE — удаление записей, где clicked_date раньше 2012 года
 DELETE FROM emails_click
 WHERE EXTRACT(YEAR FROM clicked_date) < 2012;
+```
 
+**Результат выполнения:**
+
+![Скриншот](./images_lab_01/operation_D_individual.jpg)
+
+```sql
 -- Проверка
 SELECT * FROM emails_click LIMIT 15;
+```
 
-**Скриншот выполнения:**
+**Результат выполнения:**
 
-![Uploading image.png…]() 
+![Скриншот](./images_lab_01/check_3_individual.jpg)
 
 ---
 
