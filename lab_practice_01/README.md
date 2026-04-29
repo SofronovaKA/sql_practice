@@ -102,6 +102,7 @@ LIMIT 10;
 Составьте топ-10 самых часто встречающихся слов в таблице customer_survey (столбец feedback), исключив слова короче 3 символов.
 
 ### Решение
+
 ```sql
 SELECT 
     LOWER(word) AS word,
@@ -122,6 +123,7 @@ WHERE LENGTH(word) >= 3
 GROUP BY LOWER(word)
 ORDER BY frequency DESC
 LIMIT 10;
+```
 
 ### Результат выполнения
 
