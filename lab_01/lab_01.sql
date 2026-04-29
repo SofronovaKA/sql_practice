@@ -1,90 +1,90 @@
-Создание таблицы и наполнение данными:
+-- Общие задания
 
-CREATE TABLE customers (
-    index INTEGER,
-    customer_id VARCHAR(50),
-    title VARCHAR(10),
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    suffix VARCHAR(10),
-    email VARCHAR(100),
-    gender VARCHAR(10),
-    ip_address VARCHAR(20),
-    phone VARCHAR(20),
-    street_address VARCHAR(200),
-    city VARCHAR(50),
-    state VARCHAR(2),
-    postal_code VARCHAR(10),
-    latitude DOUBLE PRECISION,
-    longitude DOUBLE PRECISION,
-    date_added DATE
-);
+-- Задание 1.1. Базовый поиск (Salespeople). Женщины-продавцы (первые 10 нанятых)
+SELECT username
+FROM salespeople
+WHERE gender = 'F'  -- или 'Female', зависит от данных
+ORDER BY hire_date
+LIMIT 10;
 
-INSERT INTO customers (customer_id, first_name, last_name, email, city, state, date_added) VALUES
-(10014, 'John', 'Smith', 'john@example.com', 'New York City', 'NY', '2023-01-01'),
-(10015, 'Jane', 'Doe', 'jane@example.com', 'New York City', 'NY', '2023-01-02'),
-(10016, 'Bob', 'Johnson', 'bob@example.com', 'Los Angeles', 'CA', '2023-01-03');
+-- Мужчины-продавцы (первые 10 нанятых)
+SELECT username
+FROM salespeople
+WHERE gender = 'M'  -- или 'Male'
+ORDER BY hire_date
+LIMIT 10;
 
-Удаление клиентов с индексом 10014:
+-- Задание 1.2. Работа с клиентами (Customers). Email клиентов из Флориды (FL), сортировка по алфавиту
+SELECT email
+FROM customers
+WHERE state = 'FL'
+ORDER BY email;
 
-DELETE FROM customers_rus
-WHERE customer_id = 10014;
+-- Имя, фамилия, email клиентов из Нью-Йорка (NYC, NY)
+SELECT first_name, last_name, email
+FROM customers
+WHERE city = 'New York City' AND state = 'NY'
+ORDER BY last_name, first_name;
 
-Добавление текстового столбца event:
+-- Все клиенты с телефонами, сортировка по дате добавления
+SELECT *
+FROM customers
+ORDER BY date_added;
 
-ALTER TABLE customers_rus
+-- Задание 1.3. Операции CRUD.
+-- 1. CREATE — создание таблицы customers_nyc с данными клиентов из города New York City (штат NY)
+CREATE TABLE customers_nyc AS
+SELECT *
+FROM customers_nyc
+WHERE city = 'New York City';
+
+-- 2. ALTER — добавление текстового столбца event
+ALTER TABLE customers_nyc
 ADD COLUMN event TEXT;
 
-Добавление данных в столбец event:
-
-UPDATE customers_rus
+-- 3. UPDATE — заполните столбец event значением 'thank-you party' через удаление данных 
+UPDATE customers_nyc
 SET event = 'thank-you party';
 
-Обновление столбца event:
+-- 4. DELETE — удаление из новой таблицы клиентов с индексом 10014 
+DELETE FROM customers_nyc
+WHERE postal_code = '10014';
 
-UPDATE customers_rus
-SET event = 'thank-you party';
+-- Проверка
+SELECT customer_id, first_name, last_name, city, postal_code, event 
+FROM customers_nyc 
+LIMIT 15;
 
-Задание 1: Клиенты (customers) из города 'Chicago'. Сортировка: индекс.
+-- Самостоятельная работа
 
+-- Задание 1. Клиенты из города Chicago. Сортировка: индекс (postal_code)
 SELECT *
 FROM customers
 WHERE city = 'Chicago'
-ORDER BY index ASC;  -- или ORDER BY customer_id ASC, если колонки index нет
+ORDER BY postal_code;
 
-Задание 2: Продажи (sales) с NULL в поле dealership_id.
-
+-- Задание 2. Продажи с NULL в поле dealership_id
 SELECT *
 FROM sales
 WHERE dealership_id IS NULL;
 
-Задание 3: Таблица emails_click (письма с кликами). Добавить score=10. Удалить старые (<2012).
+-- Задание 3. Операции CRUD.
+-- 1. CREATE — создание таблицы emails_click на основе данных из emails
+CREATE TABLE emails_click AS
+SELECT *
+FROM emails;
 
-Создание таблицы emails_click:
+-- 2. ALTER — добавление столбца score
+ALTER TABLE emails_click
+ADD COLUMN score INTEGER;
 
-CREATE TABLE emails_click (
-    id SERIAL PRIMARY KEY,
-    email VARCHAR(100),
-    click_date DATE,
-    score INTEGER
-);
-
-Добавление текстовых данных:
-
-INSERT INTO emails_click (email, click_date, score) VALUES
-('user1@example.com', '2010-05-10', NULL),
-('user2@example.com', '2011-08-15', NULL),
-('user3@example.com', '2015-03-20', NULL),
-('user4@example.com', '2016-07-25', NULL),
-('user5@example.com', '2018-01-30', NULL);
-
-
-Добавление score = 10 (для всех писем с кликами):
-
+-- 3. UPDATE — заполнение score значением 10
 UPDATE emails_click
 SET score = 10;
 
-Удаление старых записей (< 2012 года):
-
+-- 4. DELETE — удаление записей, где clicked_date раньше 2012 года
 DELETE FROM emails_click
-WHERE click_date < '2012-01-01';
+WHERE EXTRACT(YEAR FROM clicked_date) < 2012;
+
+-- Проверка
+SELECT * FROM emails_click LIMIT 15;
